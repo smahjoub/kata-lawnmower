@@ -7,7 +7,6 @@ import static org.junit.Assert.assertTrue;
 public class DirectionTests {
 
     @Test
-
     public void testRotationLeft(){
 
         assertTrue(Direction.N.getRotationLeftResult() == Direction.W);

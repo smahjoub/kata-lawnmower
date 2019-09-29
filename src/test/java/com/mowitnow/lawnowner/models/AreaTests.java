@@ -12,7 +12,7 @@ public class AreaTests {
         Coordinate c1 = new Coordinate(-1, 2);
         Coordinate c2 = new Coordinate(2, 2);
         Coordinate c3 = new Coordinate(7, 2);
-        Coordinate c4 = new Coordinate(3, 6);
+        Coordinate c4 = new Coordinate(3, 5);
 
         Area a1 = new Area(5,6);
 

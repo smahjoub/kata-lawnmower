@@ -23,6 +23,20 @@ public final class Coordinate {
 
 
     public void move(Direction d){
+        switch (d){
+            case N:
+                y = y + 1;
+                break;
+            case S:
+                y = y - 1;
+                break;
+            case E:
+                x = x + 1;
+                break;
+            case W:
+                x = x - 1;
+                break;
+        }
     }
 
     @Override

@@ -12,7 +12,7 @@ public class Application {
     public static void main(String[] args){
 
         if(args.length != 2){
-            System.err.println("Wrong program input 1");
+            System.err.println("Wrong program input !");
             System.exit(-1);
         }
         System.out.println("lawn owner app!");

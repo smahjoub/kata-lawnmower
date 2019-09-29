@@ -1,6 +1,7 @@
 package com.mowitnow.lawnowner.utils;
 
 
+import com.mowitnow.lawnowner.exceptions.InvalidInputFormat;
 import com.mowitnow.lawnowner.models.Command;
 import com.mowitnow.lawnowner.models.Direction;
 import com.mowitnow.lawnowner.models.LawnOwner;
@@ -17,11 +18,11 @@ import static org.junit.Assert.assertEquals;
 public class ProcessParserTests {
 
     @Test
-    public void testParse(){
+    public void testParse() throws InvalidInputFormat {
         final String inputString = "5 5" + System.lineSeparator() +
                 "1 2 N" + System.lineSeparator() +
                 "GAGAGAGAA" + System.lineSeparator() +
-                "3 3 E " + System.lineSeparator() +
+                "3 3 E" + System.lineSeparator() +
                 "AADAADADDA";
 
         InputStream stream = new ByteArrayInputStream(inputString.getBytes(StandardCharsets.UTF_8));
@@ -45,7 +46,5 @@ public class ProcessParserTests {
 
         assertEquals(process.get(lawnOwnerList.get(0)).size(), 9);
         assertEquals(process.get(lawnOwnerList.get(1)).size(), 10);
-
-
     }
 }

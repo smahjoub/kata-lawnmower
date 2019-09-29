@@ -16,7 +16,16 @@ public class Area {
 
 
     public boolean isOutOfArea(Coordinate c){
-        return false;
+        final int brx = bottomRight.getX();
+        final int bry = bottomRight.getY();
+
+        final int tlx = topLeft.getX();
+        final int tly = topLeft.getY();
+
+        final int x = c.getX();
+        final int y = c.getY();
+
+        return tlx > x || brx < x || tly > y || bry < y;
     }
 
     public Coordinate getTopLeft() {

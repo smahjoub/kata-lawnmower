@@ -17,11 +17,30 @@ public enum Direction {
     }
 
     public Direction getRotationRightResult(){
-        return null;
+        switch (this){
+            case W:
+                return Direction.N;
+            case E:
+                return Direction.S;
+            case S:
+                return Direction.W;
+            default:
+                return Direction.E;
+        }
+
     }
 
     public Direction getRotationLeftResult(){
-        return null;
+        switch (this){
+            case W:
+                return Direction.S;
+            case E:
+                return Direction.N;
+            case S:
+                return Direction.E;
+            default:
+                return Direction.W;
+        }
     }
 
     @Override

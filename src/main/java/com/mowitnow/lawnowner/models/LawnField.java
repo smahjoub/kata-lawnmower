@@ -2,7 +2,7 @@ package com.mowitnow.lawnowner.models;
 
 import com.mowitnow.lawnowner.events.ExecutionCompletedEvent;
 import com.mowitnow.lawnowner.events.ExecutionCompletedEventListener;
-import javafx.util.Pair;
+import org.apache.commons.lang3.tuple.ImmutablePair;
 
 import java.util.List;
 import java.util.Map;
@@ -21,7 +21,7 @@ public class LawnField {
         for (Map.Entry<LawnOwner, List<Command>> me: process.entrySet()) {
             final LawnOwner currentLawnOwner = me.getKey();
             for(Command command: me.getValue()){
-                final Pair<Coordinate, Direction> commandResult = executeCommand(currentLawnOwner,command);
+                final ImmutablePair<Coordinate, Direction> commandResult = executeCommand(currentLawnOwner,command);
                 final Coordinate nextCoordinate = commandResult.getKey();
                 // check if the next coordinate is inside the given area
                 if(!area.isOutOfArea(nextCoordinate)){
@@ -43,7 +43,7 @@ public class LawnField {
     }
 
 
-    private Pair<Coordinate, Direction> executeCommand(LawnOwner l, Command c) {
+    private ImmutablePair<Coordinate, Direction> executeCommand(LawnOwner l, Command c) {
         Coordinate coordinate = new Coordinate(l.getCurrentPosition().getX(),
                 l.getCurrentPosition().getY());
         Direction direction = l.getCurrentDirection();
@@ -60,7 +60,7 @@ public class LawnField {
 
         }
 
-        return new Pair<>(coordinate, direction);
+        return new ImmutablePair<>(coordinate, direction);
     }
 
 
